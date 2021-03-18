@@ -1,10 +1,8 @@
 package com.toombs.appointment
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository
-import javax.inject.Singleton
+import javax.enterprise.context.ApplicationScoped
 
-@Singleton
-class AppointmentDAO : PanacheRepository<Appointment> {
-
-}
+@ApplicationScoped
+class AppointmentDAO : PanacheRepository<Appointment> {}
 
