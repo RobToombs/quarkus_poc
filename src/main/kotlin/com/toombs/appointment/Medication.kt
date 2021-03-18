@@ -6,11 +6,11 @@ import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-data class Medication (
+class Medication : PanacheEntity() {
     @ManyToOne(fetch = FetchType.LAZY)
-    var appointment: Appointment? = null,
-    var name: String = "",
-    var firstFill: LocalDate? = null,
-    var copay: BigDecimal = BigDecimal.ZERO,
-    var days_supply : Int = 0
-) : PanacheEntity()
+    var appointment: Appointment? = null
+    var name: String = ""
+    var firstFill: LocalDate? = null
+    var copay: BigDecimal = BigDecimal.ZERO
+    var days_supply: Int = 0
+}
