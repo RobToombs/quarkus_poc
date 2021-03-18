@@ -7,13 +7,13 @@ import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-class Medication : PanacheEntity() {
+data class Medication (
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "appointment_id")
-    var appointment: Appointment? = null
-    var name: String = ""
-    var firstFill: LocalDate? = null
-    var copay: BigDecimal = BigDecimal.ZERO
+    var appointment: Appointment? = null,
+    var name: String = "",
+    var firstFill: LocalDate? = null,
+    var copay: BigDecimal = BigDecimal.ZERO,
     var daysSupply: Int = 0
-}
+) : PanacheEntity()
